@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <div class="card mb-3">
     <div class="card-header">
       <h4 class="text-center">已有时长</h4>
     </div>

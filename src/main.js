@@ -7,12 +7,18 @@ import VueResource from 'vue-resource'
 import App from './App'
 import Home from './components/Home'
 import 'bootstrap/dist/css/bootstrap.css'
+import 'jquery/dist/jquery.min.js'
+import 'bootstrap/dist/js/bootstrap.bundle.js'
 
 import store from './store'
 import TimeEntries from './components/TimeEntries'
 
 import News from './components/News'
 //import NewsList from './components/NewsList'
+import NewsDetail from './components/NewsDetail'
+
+import axios from 'axios'
+Vue.prototype.$http = axios
 
 Vue.use(VueRouter)
 Vue.use(VueResource)
@@ -37,6 +43,10 @@ const routes = [{
     path: 'news-list',
     component: resolve => require(['./components/NewsList.vue'], resolve)
   }]
+},{
+  path: '/news/news-detail/:uuid',
+  name: 'detail',
+  component: NewsDetail
 }]
 
 const router = new VueRouter({
